@@ -1,6 +1,6 @@
 <h1 align="center" style="text-align: center;">rn-customize-avatar</h1>
 <p align="center" style="font-size: 1.2rem;">
-  <strong>Avatar</strong> s a customizable avatar builder for React Native, inspired by social media platforms like WhatsApp and Instagram. It allows you to create avatars with custom faces, hairstyles, accessories, beards, and colors.😎 Avatar  Builder uses the dicebear and Skia libraries to generate unique avatars for each user.😍 <br /><br />
+  <strong>Avatar</strong> is a customizable avatar builder for React Native, inspired by social media platforms like WhatsApp , Instagram and Snapchat. It allows you to create avatars with custom faces, hairstyles, accessories, beards, and colors.😎 Avatar  Builder uses the <h1>Dicebear</h1> and <h1>Skia</h1> libraries to generate unique avatars for each user.😍 <br /><br />
   <img src="https://i.imgur.com/t4COoWT.gif" alt="Global Demo of RN-Avatar Component" width="86%" style="border: 0; width: 86%; min-width: 240px; max-width: 100%;" />
 </p>
 
