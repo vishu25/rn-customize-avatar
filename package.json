@@ -1,0 +1,43 @@
+{
+  "name": "rn-customize-avatar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishu25/rn-customize-avatar.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "native",
+    "component",
+    "Avatar",
+    "Custom Avatar",
+    "DiceBear",
+    "Whatsapp Avatar",
+    "SnapChat Avatar"
+  ],
+  "author": "Vishu Madaan <vishumadaan25@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vishu25/rn-customize-avatar/issues"
+  },
+  "homepage": "https://github.com/vishu25/rn-customize-avatar#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-native": "^0.71.3",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@dicebear/collection": "^5.3.4",
+    "@dicebear/core": "^5.3.4",
+    "@shopify/react-native-skia": "^0.1.173"
+  }
+}
