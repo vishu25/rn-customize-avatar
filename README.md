@@ -1,9 +1,7 @@
 <h1 align="center" style="text-align: center;">rn-customize-avatar</h1>
 <p align="center" style="font-size: 1.2rem;">
   <strong>Avatar</strong> is a customizable avatar builder for React Native, inspired by social media platforms like WhatsApp , Instagram and Snapchat. It allows you to create avatars with custom faces, hairstyles, accessories, beards, and colors.😎 Avatar  Builder uses the Dicebear and Skia libraries to generate unique avatars for each user.😍 <br /><br />
-  <div styl="">
   <img src="https://i.giphy.com/media/opNKRZ8Q8S9mh2E3t0/giphy.webp" alt="Global Demo of RN-Avatar Component" display="block" max-width="100%" />
-  <div>
 </p>
 
 <p align="center" style="font-size: 1.2rem;">
@@ -33,11 +31,14 @@ npm install --save rn-customize-avatar @shopifyreact-native-skia
 You have to install any one of them npm according to your need.
 
 <p>
-<strong> If you want to use Adventurer-neutral run </strong>
- <img src="https://api.dicebear.com/5.x/avataaars/png" display="block" alt="npm version" />
+<strong>Avatar</strong>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" alt="npm version" />
 </p>
+
 ```bash
+
 npm i @dicebear/adventurer-neutral 
+
 ```
 
 ```bash
