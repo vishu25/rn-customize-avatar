@@ -1,7 +1,9 @@
 <h1 align="center" style="text-align: center;">rn-customize-avatar</h1>
 <p align="center" style="font-size: 1.2rem;">
   <strong>Avatar</strong> is a customizable avatar builder for React Native, inspired by social media platforms like WhatsApp , Instagram and Snapchat. It allows you to create avatars with custom faces, hairstyles, accessories, beards, and colors.😎 Avatar  Builder uses the Dicebear and Skia libraries to generate unique avatars for each user.😍 <br /><br />
+  <div styl="">
   <img src="https://i.giphy.com/media/opNKRZ8Q8S9mh2E3t0/giphy.webp" alt="Global Demo of RN-Avatar Component" display="block" max-width="100%" />
+  <div>
 </p>
 
 <p align="center" style="font-size: 1.2rem;">
@@ -26,14 +28,19 @@ Since the library is a JS-based solution, to install the latest version of `rn-c
 ```bash
 npm install --save rn-customize-avatar @shopifyreact-native-skia
 ```
-# Alert
+## Alert
+
+You have to install any one of them npm according to your need.
+
+<p>
+<strong> If you want to use Adventurer-neutral run </strong>
+ <img src="https://api.dicebear.com/5.x/avataaars/png" display="block" alt="npm version" />
+</p>
+```bash
+npm i @dicebear/adventurer-neutral 
+```
 
 ```bash
-You have to install any one of them npm accoding to your need.
-
-If you want to use Adventurer-neutral run 
-
-npm i @dicebear/adventurer-neutral
 
 If you want to use Avataaars run 
 
@@ -41,7 +48,7 @@ npm i @dicebear/avataaars
 
 If you want to use BigEars run 
 
-npm i @dicebear/bigEars
+npm i @dicebear/bigEars 
 
 If you want to use Lorelei run 
 
@@ -52,29 +59,26 @@ If you want to use Micah run
 npm i @dicebear/micah 
 
 Rest Coming Soon...
-
 ```
-<!-- ## Try it out -->
+## Try it out
 
-<!-- ## Basic Usage -->
+You can try out the [DiceBear website you will get the idea of this library](https://dicebear.com/) to get a tease of the functionalities in this lib.
 
-<!-- The _ component_ is built for global use, so you have to instance this component once in your main app screen always as the last inserted component:
+## Basic Usage
 
+The Basic use of Avataars container. That's Simple 😬
+```jsx
 import React from "react";
 import { View } from "react-native";
-import FlashMessage from "";
+import {Avataars} from 'rn-customize-avatar';
 
 function App() {
   return (
-    <View style={{ flex: 1 }}>
-      <View ref={"otherView1"} />
-      <View ref={"otherView2"} />
-      <View ref={"otherView3"} />
-      {/* GLOBAL FLASH MESSAGE COMPONENT INSTANCE */}
-      <FlashMessage position="top" /> {/* <--- here as the last component */}
+    <View style={{flex : 1}}>
+      <Avataars backgroundColor="grey" />
     </View>
   );
-} -->
+}
 ```
 ## License
 
