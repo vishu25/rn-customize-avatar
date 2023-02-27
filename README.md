@@ -31,39 +31,47 @@ npm install --save rn-customize-avatar @shopifyreact-native-skia
 You have to install any one of them npm according to your need.
 
 <div>
-<strong>Avatar</strong>
+<strong>If you want to use Avataaars run</strong>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
 </div>
 
 ```bash
-
 npm i @dicebear/adventurer-neutral 
-
 ```
+
+<div>
+<strong>If you want to use BigEars run</strong>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
+</div>
 
 ```bash
-
-If you want to use Avataaars run 
-
-npm i @dicebear/avataaars
-
-If you want to use BigEars run 
-
 npm i @dicebear/bigEars 
-
-If you want to use Lorelei run 
-
-npm i @dicebear/lorelei
-
-If you want to use Micah run
-
-npm i @dicebear/micah 
-
-Rest Coming Soon...
 ```
+
+<div>
+<strong>If you want to use Lorelei run</strong>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
+</div>
+
+```bash
+npm i @dicebear/lorelei 
+```
+
+<div>
+<strong>If you want to use Micah run</strong>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
+</div>
+
+```bash
+npm i @dicebear/micah 
+```
+
+## Rest Coming Soon ♥️
+
+
 ## Try it out
 
-You can try out the [DiceBear website you will get the idea of this library](https://dicebear.com/) to get a tease of the functionalities in this lib.
+You can try out the [DiceBear](https://dicebear.com/) website to get a tease of the functionalities in this lib.
 
 ## Basic Usage
 
@@ -81,6 +89,24 @@ function App() {
   );
 }
 ```
+
+## Common Props in all Avatars
+
+| Property               | Default                  | Optional | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------- | ------------------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| backgroundColor            | `red`                   | Yes               | Use to Change the Color of Avatar Background Container                                                                                                                                                                                                                                                                                                                                                                                      |
+| svgWidth                | `280`                   | Yes               | `svgWidth` increase the width of Avatar                                                                                                                                                                                                                                                                                                                                                                                               |
+| svgHeight            | `280`                   | Yes               | `svgHeight` increase the height of  Avatar                                                                                                                                                                                                                                                                                                                                                                                           |
+| defaultAvatar               | ``                   | Yes               | If you want to change the look to default avatar use can use this props                                                                                                                                                                                                                                                                                                                                                                         |
+| listBgColor      | `grey`                    | Yes               | Change the background color of list/speed                                                                                                                                                                                                                                                                                                                                                                                                                |
+| cancelBtnStyle               | `Style`                   | Yes               | Change the style of cancel Button `cancelBtnStyle` time                                                                                                                                                                                                                                                                                                                                                                 |
+| doneBtnStyle               | `Style`                   | Yes               | `doneBtnStyle` Change the style of done Button                                                                                                                                                                                                                                                                                                                                                        |
+| chipStyle          | `Style`                  | Yes               | Use to Change the container Style of slider option item`chipStyle`                                                                                                                                                                                                                                                                                                   |
+| chipText        | `TextStyle`                   | Yes               | Use this to change the style of text inside option chip container                                                                                                                                                                                                                                                                                                                                        |
+| onDone               | `(base64) => {}`                  | Yes               | The `onDone` _prop is a callback it is used to get the final avatar in the form of base64                                                                                                                                                                                                                                                                                                                                       |
+| onCancel               | `() => {}`                    | Yes               | The `onCancel` is a callback use to cancel go back                                                                                                                                                                                                                                            
+| flatListProps              | `FlatListStyle`                   | Yes               | Apply a custom style object in Flatlist                                                                                                                                                                                                                                                                                                                                                                                
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)

@@ -17,20 +17,17 @@ import {
 export {
   getNoseSvg,
   getSideBurnSvg,
-  BigEarsType,
   getCheeksSvg,
   getFaceSvg,
   getHairSvg,
-  getAccessoriesSvg,
   createOwnAvatar,
   OPTIONS,
   getDefaultAvatar,
-  getEyeBrowsSvg,
   getEyesSvg,
   getFacialHair,
   getListOfOptions,
   getMouthSvg,
-  AdventurerNeutralType,
   getSkinTon,
 };
+export type {BigEarsType};
 export {default as BigEars} from './components/BigEars';

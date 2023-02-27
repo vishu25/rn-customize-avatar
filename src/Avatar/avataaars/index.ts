@@ -26,7 +26,8 @@ export {
   getEyesSvg,
   getFacialHair,
   getListOfOptions,
-  getMouthSvg, getSkinTon
+  getMouthSvg,
+  getSkinTon,
 };
-  export type { AvatarsTypes };
+export type {AvatarsTypes};
 export {default as Avataars} from './components/Avataars';
