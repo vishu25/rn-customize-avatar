@@ -31,39 +31,52 @@ npm install --save rn-customize-avatar @shopifyreact-native-skia
 You have to install any one of them npm according to your need.
 
 <div>
-<strong>If you want to use Avataaars run</strong>
+<strong>If you want to use Avataaars run</strong><br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
 </div>
 
+
 ```bash
+
 npm i @dicebear/adventurer-neutral 
+
 ```
 
 <div>
-<strong>If you want to use BigEars run</strong>
- <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
+  <strong>If you want to use BigEars run</strong> <br> </br>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/big-ears/png" display="block" />
 </div>
 
+
 ```bash
+
 npm i @dicebear/bigEars 
+
 ```
 
+
 <div>
-<strong>If you want to use Lorelei run</strong>
- <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
+<strong>If you want to use Lorelei run</strong> <br> </br>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/lorelei/png" display="block" />
 </div>
 
+
 ```bash
+
 npm i @dicebear/lorelei 
+
 ```
 
 <div>
-<strong>If you want to use Micah run</strong>
- <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
+<strong>If you want to use Micah run</strong> <br> </br>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/micah/png" display="block" />
 </div>
 
+
 ```bash
+
 npm i @dicebear/micah 
+
 ```
 
 ## Rest Coming Soon ♥️
@@ -97,8 +110,8 @@ function App() {
 | backgroundColor            | `red`                   | Yes               | Use to Change the Color of Avatar Background Container                                                                                                                                                                                                                                                                                                                                                                                      |
 | svgWidth                | `280`                   | Yes               | `svgWidth` increase the width of Avatar                                                                                                                                                                                                                                                                                                                                                                                               |
 | svgHeight            | `280`                   | Yes               | `svgHeight` increase the height of  Avatar                                                                                                                                                                                                                                                                                                                                                                                           |
-| defaultAvatar               | ``                   | Yes               | If you want to change the look to default avatar use can use this props                                                                                                                                                                                                                                                                                                                                                                         |
-| listBgColor      | `grey`                    | Yes               | Change the background color of list/speed                                                                                                                                                                                                                                                                                                                                                                                                                |
+| defaultAvatar               | `CustomAvatar`                   | Yes               | If you want to change the look to default avatar use can use this props                                                                                                                                                                                                                                                                                                                                                                         |
+| listBgColor      | `grey`                    | Yes               | `listBgColor` Change the background color of list                                                                                                                                                                                                                                                                                                                                                                                                                |
 | cancelBtnStyle               | `Style`                   | Yes               | Change the style of cancel Button `cancelBtnStyle` time                                                                                                                                                                                                                                                                                                                                                                 |
 | doneBtnStyle               | `Style`                   | Yes               | `doneBtnStyle` Change the style of done Button                                                                                                                                                                                                                                                                                                                                                        |
 | chipStyle          | `Style`                  | Yes               | Use to Change the container Style of slider option item`chipStyle`                                                                                                                                                                                                                                                                                                   |
