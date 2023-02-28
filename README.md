@@ -14,7 +14,7 @@
   <a href="https://npmjs.org/package/rn-customize-avatar" title="View this project on npm">
     <img src="http://img.shields.io/npm/l/rn-customize-avatar.svg?style=flat-square" alt="npm licence" />
   </a>
-  <a href="https://www.paypal.com/donate?business=ZMAJTXD5HYWCQ&item_name=open-source+dev+flash+message&currency_code=USD" title="If this project help you reduce time to develop, you can give me a cup of coffee :)">
+  <a href="https://www.buymeacoffee.com/vishumadaaQ" title="If this project help you reduce time to develop, you can give me a cup of coffee :)">
     <img src="https://img.shields.io/badge/Donate-PayPal-green.svg?style=flat-square" alt="help this project" />
   </a>
 </p>
@@ -143,6 +143,8 @@ These are some props that are related to Avataaars
 
 # Example 
 
+color should be add without `#` otherwise it's not visible in the list
+
 ```jsx
 import React from "react";
 import { View } from "react-native";
@@ -156,8 +158,43 @@ function App() {
   );
 }
 ```
-# Note 
-color should be add without `#' if you add `#" with color it will never visible 
+
+## Adventurer Neutral 
+
+These are some props that are related to Adventurer Neutral 
+
+|               `Props`                    |                 `Usage`                     |
+| ---------------------------------------- | --------------------------------------------|
+| `backgroundColorList`                       | Add custom colors in the `backgroundColorList` |
+
+# Example 
+
+color should be add without `#` otherwise it's not visible in the list
+
+```jsx
+import React from "react";
+import { View } from "react-native";
+import {AdventureNeutral} from 'rn-customize-avatar';
+
+function App() {
+  return (
+    <View style={{flex : 1}}>
+      <AdventureNeutral backgroundColor="grey" backgroundColorList={["433333", "000000"]} />
+    </View>
+  );
+}
+
+```
+
+## Rest of the Avatars list props are used to pass the custom colors in the list 
+
+
+## Advance Options 
+
+If you want to make your own components 
+
+
+
 
 ## License
 
