@@ -31,19 +31,28 @@ npm install --save rn-customize-avatar @shopifyreact-native-skia
 You have to install any one of them npm according to your need.
 
 <div>
-<strong>If you want to use Avataaars run</strong><br> </br>
+<strong  style="color: green">Avataaars</strong><br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
 </div>
 
+```bash
+
+npm i @dicebear/avataaars 
+
+```
+
+<div>
+<strong style="color: brown">Adventurer Neutral</strong><br> </br>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/adventurer-neutral/png" display="block" />
+</div>
 
 ```bash
 
 npm i @dicebear/adventurer-neutral 
 
 ```
-
 <div>
-  <strong>If you want to use BigEars run</strong> <br> </br>
+  <strong style="color: orange">BigEars</strong> <br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/big-ears/png" display="block" />
 </div>
 
@@ -54,9 +63,8 @@ npm i @dicebear/bigEars
 
 ```
 
-
 <div>
-<strong>If you want to use Lorelei run</strong> <br> </br>
+<strong style="color: white">Lorelei</strong> <br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/lorelei/png" display="block" />
 </div>
 
@@ -66,9 +74,8 @@ npm i @dicebear/bigEars
 npm i @dicebear/lorelei 
 
 ```
-
 <div>
-<strong>If you want to use Micah run</strong> <br> </br>
+<strong style="color: Yellow">Micah</strong> <br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/micah/png" display="block" />
 </div>
 
@@ -79,7 +86,7 @@ npm i @dicebear/micah
 
 ```
 
-## Rest Coming Soon ♥️
+## Rest Avatar Coming Soon... ♥️
 
 
 ## Try it out
@@ -118,7 +125,13 @@ function App() {
 | chipText        | `TextStyle`                   | Yes               | Use this to change the style of text inside option chip container                                                                                                                                                                                                                                                                                                                                        |
 | onDone               | `(base64) => {}`                  | Yes               | The `onDone` _prop is a callback it is used to get the final avatar in the form of base64                                                                                                                                                                                                                                                                                                                                       |
 | onCancel               | `() => {}`                    | Yes               | The `onCancel` is a callback use to cancel go back                                                                                                                                                                                                                                            
-| flatListProps              | `FlatListStyle`                   | Yes               | Apply a custom style object in Flatlist                                                                                                                                                                                                                                                                                                                                                                                
+| flatListProps              | `FlatListStyle`                   | Yes               | Apply a custom style object in Flatlist                                                                                                                                                                                                                                        
+
+## List Props 
+
+
+
+
 
 ## License
 
