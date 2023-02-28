@@ -51,11 +51,11 @@ npm i @dicebear/avataaars
 npm i @dicebear/adventurer-neutral 
 
 ```
+
 <div>
   <strong style="color: orange">BigEars</strong> <br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/big-ears/png" display="block" />
 </div>
-
 
 ```bash
 
@@ -69,7 +69,6 @@ npm i @dicebear/bigEars
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/lorelei/png" display="block" />
 </div>
 
-
 ```bash
 
 npm i @dicebear/lorelei 
@@ -80,7 +79,6 @@ npm i @dicebear/lorelei
 <br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/micah/png" display="block" />
 </div>
-
 
 ```bash
 
@@ -129,11 +127,37 @@ function App() {
 | onCancel               | `() => {}`                    | Yes               | The `onCancel` is a callback use to cancel go back                                                                                                                                                                                                                                            
 | flatListProps              | `FlatListStyle`                   | Yes               | Apply a custom style object in Flatlist                                                                                                                                                                                                                                        
 
-## List Props 
+## Avataaars
 
+These are some props that are related to Avataaars
 
+|               `Props`                    |                 `Usage`                     |
+| ---------------------------------------- | --------------------------------------------|
+| `skinTonColorList`                       | Add custom colors in the `skinTonColorList` |
+| `hairColorList`                          | Add custom colors in the `hairColorList`    |
+| `backgroundColorList`                    | Add custom colors in the `backgroundColorList`    |
+| `accessoriesColorList`                   | Add custom colors in the `accessoriesColorList`    |
+| `facialHairColorList`                    | Add custom colors in the `facialHairColorList`    |
+| `hatColorList`                           | Add custom colors in the `hatColorList`    |
+| `clothColorList`                         | Add custom colors in the `clothColorList`    |
 
+# Example 
 
+```jsx
+import React from "react";
+import { View } from "react-native";
+import {Avataars} from 'rn-customize-avatar';
+
+function App() {
+  return (
+    <View style={{flex : 1}}>
+      <Avataars backgroundColor="grey" hairColorList={["433333", "000000"]} />
+    </View>
+  );
+}
+```
+# Note 
+color should be add without `#' if you add `#" with color it will never visible 
 
 ## License
 
