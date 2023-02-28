@@ -31,7 +31,7 @@ npm install --save rn-customize-avatar @shopifyreact-native-skia
 You have to install any one of them npm according to your need.
 
 <div>
-<strong  style="color: green">Avataaars</strong><br> </br>
+<strong  style="color: #00FF00">Avataaars</strong><br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/avataaars/png" display="block" />
 </div>
 
@@ -64,7 +64,8 @@ npm i @dicebear/bigEars
 ```
 
 <div>
-<strong style="color: white">Lorelei</strong> <br> </br>
+<strong style="color: white">Lorelei</strong>
+ <br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/lorelei/png" display="block" />
 </div>
 
@@ -75,7 +76,8 @@ npm i @dicebear/lorelei
 
 ```
 <div>
-<strong style="color: Yellow">Micah</strong> <br> </br>
+<strong style="color: Yellow">Micah</strong> 
+<br> </br>
  <img width="100px" height="100px" src="https://api.dicebear.com/5.x/micah/png" display="block" />
 </div>
 
