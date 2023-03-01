@@ -1,7 +1,7 @@
 {
   "name": "rn-customize-avatar",
   "version": "1.0.0",
-  "description": "",
+  "description": "This package is inspired by whatsapp, instagram custom avatar. You can customize your own avatar and use as a profile in your project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
