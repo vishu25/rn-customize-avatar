@@ -1,6 +1,14 @@
-import AdventureNeutral from '../adventurerNeutral/components/AdventureNeutral';
-import {getAccessoriesSvg, createOwnAvatar, AvatarsTypes, OPTIONS, getClothingGraphicsSvg} from '../avataaars/utils/utils';
-
-export {getAccessoriesSvg, createOwnAvatar, OPTIONS, AvatarsTypes, getClothingGraphicsSvg};
-
-export default AdventureNeutral;
+import {
+  createOwnAvatar,
+  AdventurerNeutralType,
+  OPTIONS,
+  getDefaultAvatar,
+  getEyeBrowsSvg,
+  getEyesSvg,
+  getFacialHair,
+  getListOfOptions,
+  getMouthSvg,
+  getSkinTon,
+} from './utils/utils';
+export {createOwnAvatar, OPTIONS, getDefaultAvatar, getEyeBrowsSvg, getEyesSvg, getFacialHair, getListOfOptions, getMouthSvg, getSkinTon, AdventurerNeutralType};
+export {default as AdventureNeutral} from './components/AdventureNeutral';

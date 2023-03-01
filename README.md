@@ -148,7 +148,7 @@ color should be add without `#` otherwise it's not visible in the list
 ```jsx
 import React from "react";
 import { View } from "react-native";
-import {Avataars} from 'rn-customize-avatar';
+import {Avataars} from 'rn-customize-avatar/avataars';
 
 function App() {
   return (
@@ -174,7 +174,7 @@ color should be add without `#` otherwise it's not visible in the list
 ```jsx
 import React from "react";
 import { View } from "react-native";
-import {AdventureNeutral} from 'rn-customize-avatar';
+import {AdventureNeutral} from 'rn-customize-avatar/adventureNeutral';
 
 function App() {
   return (
@@ -276,7 +276,7 @@ function App() {
 ```
 ## Donation
 
-If this project helped you to reduce your developing time, you can give me a cup of coffee :)
+If this project helped you to reduce your developing time, you can give me a cup of coffee :) ♥️
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.buymeacoffee.com/vishumadaaQ)
 

@@ -28,6 +28,6 @@ export {
   getListOfOptions,
   getMouthSvg,
   getSkinTon,
+  BigEarsType,
 };
-export type {BigEarsType};
 export {default as BigEars} from './components/BigEars';

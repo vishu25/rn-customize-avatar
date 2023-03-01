@@ -1,10 +1,5 @@
 import * as React from 'react';
 import {StyleSheet, FlatList, FlatListProps, Pressable} from 'react-native';
-// interface ElementListProps {
-//   colorList: Array<string>;
-//   flatListProps?: FlatListProps<any>;
-//   onPressItem: (selectedStyle: string) => void;
-// }
 
 const ColorList = props => {
   const {colorList, flatListProps, onPressItem} = props;

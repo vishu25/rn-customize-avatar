@@ -5,7 +5,6 @@ import {
   getEyesSvg,
   getListOfOptions,
   getMouthSvg,
-  getSkinTon,
   getBeardSvg,
   getEarringsSvg,
   getEyeBrowsSvg,
@@ -15,7 +14,8 @@ import {
   getHairAccessories,
   getHead,
   getNose,
-  LoreleiTypes
+  getBaseColor,
+  MicahType,
 } from './utils/utils';
 export {
   getBeardSvg,
@@ -33,7 +33,7 @@ export {
   getEyesSvg,
   getListOfOptions,
   getMouthSvg,
-  getSkinTon,
+  getBaseColor,
+  MicahType,
 };
-export type { LoreleiTypes};
-export {default as Lorelei} from './components/Lorelei';
+export {default as Micah} from './components/Micah';

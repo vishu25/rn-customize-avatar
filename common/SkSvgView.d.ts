@@ -4,9 +4,8 @@ interface SkSvgViewProps {
   svg: SkSVG;
   width: number;
   height: number;
-  x: number;
 }
 
-declare const SkSvgView: (props: SkSvgViewProps) => JSX.Element;
-
+declare const SkSvgView: React.FC<SkSvgViewProps>;
 export default SkSvgView;
+

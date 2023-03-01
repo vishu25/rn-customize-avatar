@@ -62,7 +62,6 @@ const Avataars = props => {
         }
         return;
       }
-      console.log('selectedState', selectedState);
       setSelectedOption(OPTIONS[optionSelect](selectedState));
     },
     [selectedState, skinTonColorList, hairColorList, backgroundColorList, facialHairColorList, accessoriesColorList, hatColorList, clothColorList],
@@ -75,8 +74,6 @@ const Avataars = props => {
       })
       .replace(/\s+/g, '');
     if (typeof selectedStyle !== 'string') {
-      console.log('selectedStyle', selectedStyle);
-      console.log('dynamicId', dynamicId);
       if (selectedStyle.value) {
         updateState({[dynamicId]: [selectedStyle.value]});
         setCreatedAvatar(selectedStyle.svg);

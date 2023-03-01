@@ -15,7 +15,7 @@ import {
   getHead,
   getNose,
   getBaseColor,
-  MicahType
+  MicahType,
 } from './utils/utils';
 export {
   getBeardSvg,
@@ -33,7 +33,7 @@ export {
   getEyesSvg,
   getListOfOptions,
   getMouthSvg,
-  getBaseColor
+  getBaseColor,
+  MicahType,
 };
-export type {MicahType};
 export {default as Micah} from './components/Micah';

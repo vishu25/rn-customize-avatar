@@ -1,11 +1,8 @@
 import * as React from 'react';
-import {StyleSheet, Dimensions} from 'react-native';
 import {Skia} from '@shopify/react-native-skia';
 import {getDefaultAvatar, getMouthSvg, OPTIONS} from '../utils/utils';
 import {createOwnAvatar, getListOfOptions} from '../utils/utils';
-// import {ElementsList, OptionsList, PressableContainer} from '@/Avatar/common';
 import RenderAvatar from '../../common/RenderAvatar';
-const width = Dimensions.get('window').width;
 
 const AdventureNeutral = props => {
   const {backgroundColorList, defaultAvatar} = props;

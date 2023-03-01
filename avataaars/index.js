@@ -28,6 +28,6 @@ export {
   getListOfOptions,
   getMouthSvg,
   getSkinTon,
+  AvatarsTypes,
 };
-export type {AvatarsTypes};
 export {default as Avataars} from './components/Avataars';

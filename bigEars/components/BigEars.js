@@ -46,7 +46,6 @@ const BigEars = props => {
         }
         return;
       }
-      console.log('selectedState', selectedState);
       setSelectedOption(OPTIONS[optionSelect](selectedState));
     },
     [selectedState, skinTonColorList, backgroundColorList, hairColorList],
@@ -60,9 +59,6 @@ const BigEars = props => {
       .replace(/\s+/g, '');
     if (typeof selectedStyle !== 'string') {
       if (selectedStyle.value) {
-        console.log('cheek', selectedStyle);
-        console.log('dynamicId', dynamicId);
-
         updateState({[dynamicId]: [selectedStyle.value]});
         setCreatedAvatar(selectedStyle.svg);
       } else {
