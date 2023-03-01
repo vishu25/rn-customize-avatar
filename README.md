@@ -274,6 +274,15 @@ function App() {
 }
 
 ```
+## Donation
+
+If this project helped you to reduce your developing time, you can give me a cup of coffee :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.buymeacoffee.com/vishumadaaQ)
+
+## Documentation
+
+More details and use cases coming soon.
 
 ## :e-mail: Contact
 
