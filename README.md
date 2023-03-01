@@ -227,6 +227,31 @@ These are some functions that are related to `BigEars`
 ## Rest of the avatar's have a similar type of function you can check in the codebase. If you are facing any issue please contact me in my email mention in the contact section. ✌️
 
 
+## Example 
+
+```jsx
+import React from "react";
+import { View } from "react-native";
+import {getListOfOptions, getSkinTon,getEyesSvg } from 'rn-customize-avatar/bigEars';
+
+useEffect(() => {
+ const options =  getListOfOptions() // synchronous function ♥️ 
+ const eyes =  getEyesSvg() // same synchronous function ♥️  return Array<Item>  
+ console.log("options",options)
+ console.log("eyes",eyes)
+
+},[])
+
+function App() {
+  return (
+    <View style={{flex : 1}}>
+      <SkSvgView  svg={createOwnAvatar({})}>
+    </View>
+  );
+}
+
+```
+
 ## IMPORTANT
 What is the use case of SKSVG ?
 
@@ -250,7 +275,9 @@ function App() {
 
 ```
 
-## 
+## :e-mail: Contact
+
+If you have any question, please email `vishumadaan25@gmail.com`.
 
 ## License
 
