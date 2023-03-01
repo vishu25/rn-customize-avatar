@@ -99,7 +99,7 @@ The Basic use of Avataars container. That's Simple 😬
 ```jsx
 import React from "react";
 import { View } from "react-native";
-import {Avataars} from 'rn-customize-avatar';
+import {Avataars} from 'rn-customize-avatar/avataars';
 
 function App() {
   return (
