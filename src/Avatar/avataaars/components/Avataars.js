@@ -1,38 +1,13 @@
 import * as React from 'react';
-import {View, StyleSheet, Dimensions, StatusBar} from 'react-native';
-import {Canvas, ImageSVG, Skia} from '@shopify/react-native-skia';
+import {Skia} from '@shopify/react-native-skia';
 import {getDefaultAvatar, getSkinTon, OPTIONS} from '../utils/utils';
 import {createOwnAvatar, getListOfOptions} from '../utils/utils';
-import {ElementsList, OptionsList, PressableContainer} from '@/Avatar/common';
-const width = Dimensions.get('window').width;
+import RenderAvatar from '@/Avatar/common/RenderAvatar';
 
 const Avataars = props => {
-  const {
-    svgWidth,
-    svgHeight,
-    backgroundColor,
-    skinTonColorList,
-    facialHairColorList,
-    accessoriesColorList,
-    hairColorList,
-    backgroundColorList,
-    onDone,
-    onCancel,
-    hatColorList,
-    clothColorList,
-    defaultAvatar,
-    flatListProps,
-    chipStyle,
-    chipTextStyle,
-    cancelBtnStyle,
-    doneBtnStyle,
-    listBgColor,
-  } = props;
-  const SVG_WIDTH = svgWidth ? svgWidth : 280;
-  const SVG_HEIGHT = svgHeight ? svgHeight : 280;
+  const {skinTonColorList, facialHairColorList, accessoriesColorList, hairColorList, backgroundColorList, hatColorList, clothColorList, defaultAvatar} = props;
   const [createdAvatar, setCreatedAvatar] = React.useState(Skia.SVG.MakeFromString(getDefaultAvatar(defaultAvatar)));
   const [selectedOption, setSelectedOption] = React.useState();
-
   const [selectedState, setSelectedState] = React.useState({
     flip: true,
     radius: 5,
@@ -54,7 +29,6 @@ const Avataars = props => {
     facialHairProbability: 100,
     accessoriesProbability: 100,
   });
-  const canvasRef = React.useRef();
 
   const selectedOptionRef = React.useRef('Skin Color');
 
@@ -116,39 +90,16 @@ const Avataars = props => {
     }
   };
 
-  const onPressPressableDone = () => {
-    onDone && onDone(canvasRef.current?.makeImageSnapshot().encodeToBase64() ?? '');
-  };
-
-  const onPressPressableCancel = () => {
-    onCancel && onCancel();
-  };
-
   return (
-    <View style={[styles.container]}>
-      <StatusBar translucent backgroundColor={backgroundColor} />
-      <Canvas ref={canvasRef} style={[styles.imageDefaultSize, {backgroundColor: backgroundColor ?? 'red'}]}>
-        {createdAvatar && <ImageSVG svg={createdAvatar} width={SVG_WIDTH} height={SVG_HEIGHT} x={(width - SVG_WIDTH) / 2} y={30} />}
-      </Canvas>
-      <OptionsList chipStyle={chipStyle} chipTextStyle={chipTextStyle} listOfElements={getListOfOptions()} onPress={onPressOption} />
-      {selectedOption && <ElementsList listBgColor={listBgColor} flatListProps={flatListProps} onPressItem={setStyle} list={selectedOption} />}
-      <PressableContainer cancelBtnStyle={cancelBtnStyle} doneBtnStyle={doneBtnStyle} onPressCancel={onPressPressableCancel} onPressDone={onPressPressableDone} />
-    </View>
+    <RenderAvatar
+      onPressOption={onPressOption}
+      getListOfOptions={getListOfOptions()}
+      setStyle={setStyle}
+      createdAvatar={createdAvatar}
+      selectedOption={selectedOption}
+      {...props}
+    />
   );
 };
 
 export default Avataars;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  canvasDefaultContainer: {width: 100, height: 100},
-  imageDefaultSize: {
-    width: width,
-    height: 300,
-    alignItems: 'center',
-    backgroundColor: 'red',
-    justifyContent: 'center',
-  },
-});
