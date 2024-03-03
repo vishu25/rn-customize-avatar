@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Skia} from '@shopify/react-native-skia';
 import {getDefaultAvatar, createOwnAvatar, getListOfOptions, OPTIONS, getBaseColor} from '../utils/utils';
-import RenderAvatar from '@/Avatar/common/RenderAvatar';
+import RenderAvatar from '../../common/RenderAvatar';
 const Micah = props => {
   const black = '000000';
   const {
