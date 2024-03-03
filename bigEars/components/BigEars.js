@@ -3,7 +3,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 import {Skia} from '@shopify/react-native-skia';
 import {getDefaultAvatar, getSkinTon, OPTIONS} from '../utils/utils';
 import {createOwnAvatar, getListOfOptions} from '../utils/utils';
-import RenderAvatar from '@/Avatar/common/RenderAvatar';
+import RenderAvatar from '../../common/RenderAvatar';
 const width = Dimensions.get('window').width;
 
 const BigEars = props => {
