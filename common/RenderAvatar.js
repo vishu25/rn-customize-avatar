@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, StyleSheet, Dimensions, StatusBar} from 'react-native';
 import {Canvas} from '@shopify/react-native-skia';
-import {ElementsList, OptionsList, PressableContainer} from '@/Avatar/common';
+import {ElementsList, OptionsList, PressableContainer} from './index';
 import SkSvgView from './SkSvgView';
 const width = Dimensions.get('window').width;
 
