@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, ScrollView, ViewStyle, StyleProp, TextStyle, Pressable} from 'react-native';
+import {Text, View, StyleSheet, ScrollView, Pressable} from 'react-native';
 
 const OptionsList = props => {
   const {chipStyle, chipTextStyle, onPress, listOfElements} = props;
