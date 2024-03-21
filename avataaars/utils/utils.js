@@ -10,7 +10,7 @@ const defaultAvatar = {
   backgroundColor: ['65c9ff', 'ffd5dc'],
   backgroundType: ['solid'],
   mouth: ['smile'],
-  skinColor: [],
+  skinColor: ["d08b5b"],
 };
 
 export const getDefaultAvatar = setDefaultAvatar => {

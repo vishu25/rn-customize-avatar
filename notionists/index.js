@@ -1,0 +1,36 @@
+import {
+    createOwnAvatar,
+    OPTIONS,
+    getDefaultAvatar,
+    getEyesSvg,
+    getListOfOptions,
+    getMouthSvg,
+    getBeardSvg,
+    getEyeBrowsSvg,
+    getHair,
+    getHead,
+    CroodlesTypes,
+    getFaceSvg,
+    getHairColor,
+    getMustachesSvg,
+    getTopSvg,
+  } from './utils/utils';
+  export {
+    getBeardSvg,
+    getEyeBrowsSvg,
+    getHair,
+    getHead,
+    createOwnAvatar,
+    OPTIONS,
+    getDefaultAvatar,
+    getEyesSvg,
+    getListOfOptions,
+    getMouthSvg,
+    getFaceSvg,
+    getHairColor,
+    getMustachesSvg,
+    getTopSvg,
+    CroodlesTypes,
+  };
+  export {default as Croodles} from './components/Notionists';
+  

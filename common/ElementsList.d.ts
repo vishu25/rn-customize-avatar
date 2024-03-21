@@ -1,8 +1,8 @@
 import {FlatListProps} from 'react-native';
-import {SVG} from '@shopify/react-native-skia';
+import {SkSVG} from '@shopify/react-native-skia';
 
 export interface Item {
-  svg: SVG;
+  svg: SkSVG;
   value: string;
 }
 

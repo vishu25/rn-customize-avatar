@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, FlatList, FlatListProps, Pressable} from 'react-native';
+import {View, StyleSheet, FlatList, Pressable} from 'react-native';
 import {Canvas, ImageSVG, Skia} from '@shopify/react-native-skia';
 import {ColorList} from './index';
 
