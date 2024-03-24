@@ -24,7 +24,7 @@
 Since the library is a JS-based solution, to install the latest version of `rn-customize-avatar`:
 
 ```bash
-npm install --save rn-customize-avatar @shopifyreact-native-skia
+npm install --save rn-customize-avatar @shopify/react-native-skia
 ```
 ## Alert
 
@@ -83,6 +83,30 @@ npm i @dicebear/lorelei
 ```bash
 
 npm i @dicebear/micah 
+
+```
+
+<div>
+<strong style="color: Yellow">Croodles</strong> 
+<br> </br>
+ <img width="100px" height="100px" src="https://api.dicebear.com/5.x/croodles/png" display="block" />
+</div>
+
+```bash
+
+npm i @dicebear/croodles 
+
+```
+
+<div>
+<strong style="color: Yellow">Notionists</strong> 
+<br> </br>
+ <img width="100px" height="100px" src="https://api.dicebear.com/8.x/notionists/svg?seed=Sasha&size=100" display="block" />
+</div>
+
+```bash
+
+npm i @dicebear/Notionists 
 
 ```
 
