@@ -5,43 +5,43 @@ import {createOwnAvatar, getListOfOptions} from '../utils/utils';
 import RenderAvatar from '../../common/RenderAvatar';
 
 const Notionists = props => {
-  const {backgroundColorList, defaultAvatar, topColourList} = props;
+  const {backgroundColorList, defaultAvatar} = props;
   const [createdAvatar, setCreatedAvatar] = React.useState(Skia.SVG.MakeFromString(getDefaultAvatar(defaultAvatar)));
   const [selectedOption, setSelectedOption] = React.useState();
   const [selectedState, setSelectedState] = React.useState({
-    beard: [defaultAvatar?.beard ? [...defaultAvatar?.beard] : 'variant12'],
+    beard: [defaultAvatar?.beard ? [...defaultAvatar?.beard] : ''],
     body: [defaultAvatar?.body ? [...defaultAvatar?.body] : 'variant25'],
     brows: [defaultAvatar?.brows ? [...defaultAvatar?.brows] : 'variant13'],
     eyes: [defaultAvatar?.eyes ? [...defaultAvatar?.eyes] : 'variant05'],
     nose: [defaultAvatar?.nose ? [...defaultAvatar?.nose] : 'variant20'],
-    gesture: [defaultAvatar?.gesture ? [...defaultAvatar?.gesture] : 'waveOkLongArms'],
-    glasses: [defaultAvatar?.glasses ? [...defaultAvatar?.glasses] : 'waveOkLongArms'],
+    gesture: [defaultAvatar?.gesture ? [...defaultAvatar?.gesture] : ''],
+    glasses: [defaultAvatar?.glasses ? [...defaultAvatar?.glasses] : ''],
     hair: [defaultAvatar?.hair ? [...defaultAvatar?.hair] : 'variant63'],
     lips: [defaultAvatar?.lips ? [...defaultAvatar?.lips] : 'variant30'],
     backgroundColor: [defaultAvatar?.backgroundColor ? [...defaultAvatar?.backgroundColor] : '65c9ff'],
+    glassesProbability : 100,
+    gestureProbability : 100,
+    beardProbability : 100
   });
-  const selectedOptionRef = React.useRef('Skin Color');
+  const selectedOptionRef = React.useRef('beard');
   const updateState = data => setSelectedState({...selectedState, ...data});
 
   React.useEffect(() => {
-    setSelectedOption(getBeardSvg());
+    setSelectedOption(getBeardSvg(selectedState));
   }, []);
 
   const onPressOption = React.useCallback(
     optionSelect => {
       selectedOptionRef.current = optionSelect;
-      console.log("optionSelectoptionSelect", optionSelect)
       if (optionSelect.includes('Color')) {
-        if (optionSelect.includes('Top')) {
-          setSelectedOption(OPTIONS[optionSelect](topColourList));
-        } else if (optionSelect.includes('Background')) {
+         if (optionSelect.includes('Background')) {
           setSelectedOption(OPTIONS[optionSelect](backgroundColorList));
         }
         return 
       }
       setSelectedOption(OPTIONS[optionSelect](selectedState));
     },
-    [selectedState, topColourList, backgroundColorList],
+    [selectedState, backgroundColorList],
   );
 
   const setStyle = selectedStyle => {

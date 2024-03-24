@@ -32,5 +32,5 @@ import {
     getTopSvg,
     CroodlesTypes,
   };
-  export {default as Croodles} from './components/Notionists';
+  export {default as Notionists} from './components/Notionists';
   

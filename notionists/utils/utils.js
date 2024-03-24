@@ -21,7 +21,6 @@ export const getDefaultAvatar = (setDefaultAvatar) => {
   return createAvatar(notionists, {
     ...defaultAvatar,
     ...setDefaultAvatar,
-    
   }).toString();
 };
 
@@ -31,7 +30,7 @@ export const getListOfOptions = () => {
     'Body',
     'Brows',
     'Eyes',
-    'Gestures',
+    'Gesture',
     'Glasses',
     'Hair',
     'Lips',
@@ -123,15 +122,15 @@ export const getBrowsSvg = (selectedStyle) => {
   });
 };
 
-export const getGesturesSvg = (selectedStyle) => {
+export const getGestureSvg = (selectedStyle) => {
   return schema.properties.gesture.default.map((key) => {
     return {
       svg: Skia.SVG.MakeFromString(
         createAvatar(notionists, {
           ...defaultAvatar,
           ...selectedStyle,
-          gestureProbability: 100,
           gesture: [key],
+          gestureProbability: 100,
         }).toString()
       ),
       value: key,
@@ -189,10 +188,11 @@ export const getHairSVG = (selectedStyle) => {
 export const OPTIONS = {
   Beard: (selectedState) => getBeardSvg(selectedState),
   Body: (selectedState) => getBodySvg(selectedState),
+  Brows: (selectedState) => getBrowsSvg(selectedState),
   Eyes: (selectedState) => getEyesSvg(selectedState),
-  Gestures: (selectedState) => getGesturesSvg(selectedState),
+  Gesture: (selectedState) => getGestureSvg(selectedState),
   Glasses: (selectedState) => getGlassesSvg(selectedState),
-  Hair: (selectedState) => getHair(selectedState),
+  Hair: (selectedState) => getHairSVG(selectedState),
   Lips: (selectedState) => getLipsSvg(selectedState),
   Nose: (selectedState) => getNoseSVG(selectedState),
   'Background Color': (selectedState) =>

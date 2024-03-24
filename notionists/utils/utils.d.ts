@@ -71,7 +71,7 @@ declare const getBrowsSvg: (selectedStyle?: NotionistsTypes, color?: string) => 
  * @param {string} [color] The color of the hair.
  * @return {Array<Item>} The mouth SVG.
  */
-declare const getGesturesSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
+declare const getGestureSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
 
 
 /**
@@ -106,7 +106,7 @@ type Options = {
   Beard: (selectedState?: NotionistsTypes) => Array<Item>;
   Body: (selectedState?: NotionistsTypes) => Array<Item>;
   Eyes: (selectedState?: NotionistsTypes) => Array<Item>;
-  Gestures: (selectedState?: NotionistsTypes) => Array<Item>;
+  Gesture: (selectedState?: NotionistsTypes) => Array<Item>;
   Glasses: (selectedState?: NotionistsTypes) => Array<Item>;
   Hair : (selectedState?: NotionistsTypes) => Array<Item>;
   Lips : (selectedState?: NotionistsTypes) => Array<Item>;
@@ -124,7 +124,7 @@ export {
   getHairSvg,
   getBodySvg,
   getBrowsSvg,
-  getGesturesSvg,
+  getGestureSvg,
   getGlassesSvg,
   getLipsSvg,
   getNoseSvg,
