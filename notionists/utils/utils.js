@@ -2,19 +2,19 @@ import { createAvatar } from '@dicebear/core';
 import * as notionists from '@dicebear/notionists';
 import { Skia } from '@shopify/react-native-skia';
 import { schema } from './schema';
+import { THEME_COLOUR } from '../../constants/colors';
 
 const defaultAvatar = {
   beard: ['variant12'],
-  body : ['variant25'],
-  brows : ['variant13'],
+  body: ['variant25'],
+  brows: ['variant13'],
   eyes: ['variant05'],
-  gesture : ['waveOkLongArms'],
-  glasses : ['variant11'],
+  gesture: ['waveOkLongArms'],
+  glasses: ['variant11'],
   hair: ['variant63'],
   nose: ['variant20'],
-  lips : ['variant30'],
-  backgroundColor: ['65c9ff'],
-  
+  lips: ['variant30'],
+  backgroundColor: [THEME_COLOUR],
 };
 
 export const getDefaultAvatar = (setDefaultAvatar) => {
@@ -25,24 +25,11 @@ export const getDefaultAvatar = (setDefaultAvatar) => {
 };
 
 export const getListOfOptions = () => {
-  return [
-    'Beard',
-    'Body',
-    'Brows',
-    'Eyes',
-    'Gesture',
-    'Glasses',
-    'Hair',
-    'Lips',
-    'Nose',
-    'Background Color',
-  ];
+  return ['Beard', 'Body', 'Brows', 'Eyes', 'Gesture', 'Glasses', 'Hair', 'Lips', 'Nose', 'Background Color'];
 };
 
 export const createOwnAvatar = (avatarStyle) => {
-  return Skia.SVG.MakeFromString(
-    createAvatar(notionists, { ...avatarStyle }).toString()
-  );
+  return Skia.SVG.MakeFromString(createAvatar(notionists, { ...avatarStyle }).toString());
 };
 
 export const getLipsSvg = (selectedStyle) => {
@@ -153,7 +140,6 @@ export const getEyesSvg = (selectedStyle) => {
   });
 };
 
-
 export const getNoseSVG = (selectedStyle) => {
   return schema.properties.nose.default.map((key) => {
     return {
@@ -168,7 +154,6 @@ export const getNoseSVG = (selectedStyle) => {
     };
   });
 };
-
 
 export const getHairSVG = (selectedStyle) => {
   return schema.properties.hair.default.map((key) => {
@@ -195,8 +180,5 @@ export const OPTIONS = {
   Hair: (selectedState) => getHairSVG(selectedState),
   Lips: (selectedState) => getLipsSvg(selectedState),
   Nose: (selectedState) => getNoseSVG(selectedState),
-  'Background Color': (selectedState) =>
-    ['ffc700', '9747ff', 'f24e1e', '699bf7', '0fa958', '000000'].concat(
-      selectedState ?? []
-    ),
+  'Background Color': (selectedState) => ['ffc700', '9747ff', 'f24e1e', '699bf7', '0fa958', '000000'].concat(selectedState ?? []),
 };

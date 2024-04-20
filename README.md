@@ -1,7 +1,7 @@
 <h1 align="center" style="text-align: center;">rn-customize-avatar</h1>
 <p align="center" style="font-size: 1.2rem;">
   <strong>react-native-customize-avatar</strong> is a customizable avatar builder for React Native, inspired by social media platforms like WhatsApp , Instagram and Snapchat. It allows you to create avatars with custom faces, hairstyles, accessories, beards, and colors.😎 Avatar Builder uses the Dicebear and Skia libraries to generate unique avatars for each user.😍 <br /><br />
-  <img src="https://i.giphy.com/media/opNKRZ8Q8S9mh2E3t0/giphy.webp" alt="Global Demo of RN-Avatar Component" display="block" max-width="100%" />
+  <img src="https://i.giphy.com/media/YreDwrq49yTxF8RJp6/giphy.webp" alt="Global Demo of RN-Avatar Component" display="block" max-width="100%" />
 </p>
 
 <p align="center" style="font-size: 1.2rem;">
@@ -26,6 +26,7 @@ Since the library is a JS-based solution, to install the latest version of `rn-c
 ```bash
 npm install --save rn-customize-avatar @shopify/react-native-skia
 ```
+
 ## Alert
 
 You have to install any one of them npm according to your need.
@@ -37,7 +38,7 @@ You have to install any one of them npm according to your need.
 
 ```bash
 
-npm i @dicebear/avataaars 
+npm i @dicebear/avataaars
 
 ```
 
@@ -48,7 +49,7 @@ npm i @dicebear/avataaars
 
 ```bash
 
-npm i @dicebear/adventurer-neutral 
+npm i @dicebear/adventurer-neutral
 
 ```
 
@@ -59,7 +60,7 @@ npm i @dicebear/adventurer-neutral
 
 ```bash
 
-npm i @dicebear/bigEars 
+npm i @dicebear/bigEars
 
 ```
 
@@ -71,9 +72,10 @@ npm i @dicebear/bigEars
 
 ```bash
 
-npm i @dicebear/lorelei 
+npm i @dicebear/lorelei
 
 ```
+
 <div>
 <strong style="color: Yellow">Micah</strong> 
 <br> </br>
@@ -82,7 +84,7 @@ npm i @dicebear/lorelei
 
 ```bash
 
-npm i @dicebear/micah 
+npm i @dicebear/micah
 
 ```
 
@@ -94,7 +96,7 @@ npm i @dicebear/micah
 
 ```bash
 
-npm i @dicebear/croodles 
+npm i @dicebear/croodles
 
 ```
 
@@ -106,12 +108,11 @@ npm i @dicebear/croodles
 
 ```bash
 
-npm i @dicebear/Notionists 
+npm i @dicebear/Notionists
 
 ```
 
 ## Rest Avatar Coming Soon... ♥️
-
 
 ## Try it out
 
@@ -120,14 +121,15 @@ You can try out the [DiceBear](https://dicebear.com/) website to get a tease of 
 ## Basic Usage
 
 The Basic use of Avataars container. That's Simple 😬
+
 ```jsx
-import React from "react";
-import { View } from "react-native";
-import {Avataars} from 'rn-customize-avatar/avataars';
+import React from 'react';
+import { View } from 'react-native';
+import { Avataars } from 'rn-customize-avatar/avataaars';
 
 function App() {
   return (
-    <View style={{flex : 1}}>
+    <View style={{ flex: 1 }}>
       <Avataars backgroundColor="grey" />
     </View>
   );
@@ -136,122 +138,118 @@ function App() {
 
 ## Common Props in all Avatars
 
-| Property               | Default                  | Optional | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ---------------------- | ------------------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| backgroundColor            | `red`                   | Yes               | Use to Change the Color of Avatar Background Container                                                                                                                                                                                                                                                                                                                                                                                      |
-| svgWidth                | `280`                   | Yes               | `svgWidth` increase the width of Avatar                                                                                                                                                                                                                                                                                                                                                                                               |
-| svgHeight            | `280`                   | Yes               | `svgHeight` increase the height of  Avatar                                                                                                                                                                                                                                                                                                                                                                                           |
-| defaultAvatar               | `CustomAvatar`                   | Yes               | If you want to change the look to default avatar use can use this props                                                                                                                                                                                                                                                                                                                                                                         |
-| listBgColor      | `grey`                    | Yes               | `listBgColor` Change the background color of list                                                                                                                                                                                                                                                                                                                                                                                                                |
-| cancelBtnStyle               | `Style`                   | Yes               | Change the style of cancel Button `cancelBtnStyle` time                                                                                                                                                                                                                                                                                                                                                                 |
-| doneBtnStyle               | `Style`                   | Yes               | `doneBtnStyle` Change the style of done Button                                                                                                                                                                                                                                                                                                                                                        |
-| chipStyle          | `Style`                  | Yes               | Use to Change the container Style of slider option item`chipStyle`                                                                                                                                                                                                                                                                                                   |
-| chipText        | `TextStyle`                   | Yes               | Use this to change the style of text inside option chip container                                                                                                                                                                                                                                                                                                                                        |
-| onDone               | `(base64) => {}`                  | Yes               | The `onDone` _prop is a callback it is used to get the final avatar in the form of base64                                                                                                                                                                                                                                                                                                                                       |
-| onCancel               | `() => {}`                    | Yes               | The `onCancel` is a callback use to cancel go back                                                                                                                                                                                                                                            
-| flatListProps              | `FlatListStyle`                   | Yes               | Apply a custom style object in Flatlist                                                                                                                                                                                                                                        
+| Property        | Default          | Optional | Description                                                                                |
+| --------------- | ---------------- | -------- | ------------------------------------------------------------------------------------------ |
+| backgroundColor | `red`            | Yes      | Use to Change the Color of Avatar Background Container                                     |
+| svgWidth        | `280`            | Yes      | `svgWidth` increase the width of Avatar                                                    |
+| svgHeight       | `280`            | Yes      | `svgHeight` increase the height of Avatar                                                  |
+| defaultAvatar   | `CustomAvatar`   | Yes      | If you want to change the look to default avatar use can use this props                    |
+| listBgColor     | `grey`           | Yes      | `listBgColor` Change the background color of list                                          |
+| cancelBtnStyle  | `Style`          | Yes      | Change the style of cancel Button `cancelBtnStyle` time                                    |
+| doneBtnStyle    | `Style`          | Yes      | `doneBtnStyle` Change the style of done Button                                             |
+| chipStyle       | `Style`          | Yes      | Use to Change the container Style of slider option item`chipStyle`                         |
+| chipText        | `TextStyle`      | Yes      | Use this to change the style of text inside option chip container                          |
+| onDone          | `(base64) => {}` | Yes      | The `onDone` \_prop is a callback it is used to get the final avatar in the form of base64 |
+| onCancel        | `() => {}`       | Yes      | The `onCancel` is a callback use to cancel go back                                         |
+| flatListProps   | `FlatListStyle`  | Yes      | Apply a custom style object in Flatlist                                                    |
 
 ## Avataaars
 
 These are some props that are related to Avataaars
 
-|               `Props`                    |                 `Usage`                     |
-| ---------------------------------------- | --------------------------------------------|
-| `skinTonColorList`                       | Add custom colors in the `skinTonColorList` |
-| `hairColorList`                          | Add custom colors in the `hairColorList`    |
-| `backgroundColorList`                    | Add custom colors in the `backgroundColorList`    |
-| `accessoriesColorList`                   | Add custom colors in the `accessoriesColorList`    |
-| `facialHairColorList`                    | Add custom colors in the `facialHairColorList`    |
-| `hatColorList`                           | Add custom colors in the `hatColorList`    |
-| `clothColorList`                         | Add custom colors in the `clothColorList`    |
+| `Props`                | `Usage`                                         |
+| ---------------------- | ----------------------------------------------- |
+| `skinTonColorList`     | Add custom colors in the `skinTonColorList`     |
+| `hairColorList`        | Add custom colors in the `hairColorList`        |
+| `backgroundColorList`  | Add custom colors in the `backgroundColorList`  |
+| `accessoriesColorList` | Add custom colors in the `accessoriesColorList` |
+| `facialHairColorList`  | Add custom colors in the `facialHairColorList`  |
+| `hatColorList`         | Add custom colors in the `hatColorList`         |
+| `clothColorList`       | Add custom colors in the `clothColorList`       |
 
-# Example 
+# Example
 
 color should be add without `#` otherwise it's not visible in the list
 
 ```jsx
-import React from "react";
-import { View } from "react-native";
-import {Avataars} from 'rn-customize-avatar/avataars';
+import React from 'react';
+import { View } from 'react-native';
+import { Avataars } from 'rn-customize-avatar/avataars';
 
 function App() {
   return (
-    <View style={{flex : 1}}>
-      <Avataars backgroundColor="grey" hairColorList={["433333", "000000"]} />
+    <View style={{ flex: 1 }}>
+      <Avataars backgroundColor="grey" hairColorList={['433333', '000000']} />
     </View>
   );
 }
 ```
 
-## Adventurer Neutral 
+## Adventurer Neutral
 
-These are some props that are related to Adventurer Neutral 
+These are some props that are related to Adventurer Neutral
 
-|               `Props`                    |                 `Usage`                     |
-| ---------------------------------------- | --------------------------------------------|
-| `backgroundColorList`                       | Add custom colors in the `backgroundColorList` |
+| `Props`               | `Usage`                                        |
+| --------------------- | ---------------------------------------------- |
+| `backgroundColorList` | Add custom colors in the `backgroundColorList` |
 
-# Example 
+# Example
 
 color should be add without `#` otherwise it's not visible in the list
 
 ```jsx
-import React from "react";
-import { View } from "react-native";
-import {AdventureNeutral} from 'rn-customize-avatar/adventureNeutral';
+import React from 'react';
+import { View } from 'react-native';
+import { AdventureNeutral } from 'rn-customize-avatar/adventureNeutral';
 
 function App() {
   return (
-    <View style={{flex : 1}}>
-      <AdventureNeutral backgroundColor="grey" backgroundColorList={["433333", "000000"]} />
+    <View style={{ flex: 1 }}>
+      <AdventureNeutral backgroundColor="grey" backgroundColorList={['433333', '000000']} />
     </View>
   );
 }
-
 ```
 
 ## Rest of the Avatars have a similar props used to pass the custom colors in the list (If you find any issue in it please comment)
 
-
-## Coming to Advance Options 
+## Coming to Advance Options
 
 If you want to make your own screen with different ui you can. 😎
 
 Suppose you have to change the UI of Avataars Component. You can export the following functions to get the SVG's
 
-These are some functions that are related to `Avataar` 
+These are some functions that are related to `Avataar`
 
-|               `Functions`                    |                 `Usage`                 |
-| ---------------------------------------- | --------------------------------------------|
-| `createOwnAvatar`                        | `return the SkSVG `, by props you can change the style of avatar                                     |
-| `getListOfOptions`                       | `return the Array<string>` list of category  |
-| `getSkinTon`                             | `return Array<string>` list of default colors   |
-| `getMouthSvg`                            | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of SVG's and value
-| `getEyesSvg`                              | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of eyes 
-| `getClothingSvg`                          | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of clothes 
-| `getClothingGraphicsSvg`                  | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of clothing graphics
-| `getAccessoriesSvg`                       | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of accessories
-| `etc.`                       |`Please check other props it's same as following pros with same return type just return different SVG's according with there name.♥️ `
+| `Functions`              | `Usage`                                                                                                                                |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `createOwnAvatar`        | `return the SkSVG `, by props you can change the style of avatar                                                                       |
+| `getListOfOptions`       | `return the Array<string>` list of category                                                                                            |
+| `getSkinTon`             | `return Array<string>` list of default colors                                                                                          |
+| `getMouthSvg`            | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of SVG's and value                          |
+| `getEyesSvg`             | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of eyes                                     |
+| `getClothingSvg`         | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of clothes                                  |
+| `getClothingGraphicsSvg` | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of clothing graphics                        |
+| `getAccessoriesSvg`      | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of accessories                              |
+| `etc.`                   | `Please check other props it's same as following pros with same return type just return different SVG's according with there name.♥️ ` |
 
+These are some functions that are related to `BigEars`
 
-These are some functions that are related to `BigEars` 
-
-|               `Functions`                    |                 `Usage`                 |
-| ---------------------------------------- | --------------------------------------------|
-| `createOwnAvatar`                        | `return the SkSVG `, by props you can change the style of BigEars                                     |
-| `getListOfOptions`                       | `return the Array<string>` list of category  |
-| `getSkinTon`                             | `return Array<string>` list of default colors   |
-| `getMouthSvg`                            | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of SVG's and value
-| `getEyesSvg`                              | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of eyes 
-| `getEarsSvg`                          | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of ears 
-| `getFaceSvg`                  | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of faces graphics
-| `getSideBurnSvg`                       | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of side Burn 
-| `etc.`                       |`Please check other props it's same as following pros with same return type just return different SVG's according with there name.♥️ `
+| `Functions`        | `Usage`                                                                                                                                |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `createOwnAvatar`  | `return the SkSVG `, by props you can change the style of BigEars                                                                      |
+| `getListOfOptions` | `return the Array<string>` list of category                                                                                            |
+| `getSkinTon`       | `return Array<string>` list of default colors                                                                                          |
+| `getMouthSvg`      | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of SVG's and value                          |
+| `getEyesSvg`       | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of eyes                                     |
+| `getEarsSvg`       | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of ears                                     |
+| `getFaceSvg`       | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of faces graphics                           |
+| `getSideBurnSvg`   | `return Array<Item>` Item is basically object includes SkSVG and value use to get the list of side Burn                                |
+| `etc.`             | `Please check other props it's same as following pros with same return type just return different SVG's according with there name.♥️ ` |
 
 ## Rest of the avatar's have a similar type of function you can check in the codebase. If you are facing any issue please contact me in my email mention in the contact section. ✌️
 
-
-## Example 
+## Example
 
 ```jsx
 import React from "react";
@@ -259,8 +257,8 @@ import { View } from "react-native";
 import {getListOfOptions, getSkinTon,getEyesSvg } from 'rn-customize-avatar/bigEars';
 
 useEffect(() => {
- const options =  getListOfOptions() // synchronous function ♥️ 
- const eyes =  getEyesSvg() // same synchronous function ♥️  return Array<Item>  
+ const options =  getListOfOptions() // synchronous function ♥️
+ const eyes =  getEyesSvg() // same synchronous function ♥️  return Array<Item>
  console.log("options",options)
  console.log("eyes",eyes)
 
@@ -277,12 +275,12 @@ function App() {
 ```
 
 ## IMPORTANT
+
 What is the use case of SKSVG ?
 
-SkSVG is like a svg basically generated by `Skia`. To render the SKSVG you can use the following component.
-I have create a custom component by this you can render SkSVG.
+SkSVG is like a svg basically generated by `Skia`. To render the SKSVG you can use the following component. I have create a custom component by this you can render SkSVG.
 
-## Example 
+## Example
 
 ```jsx
 import React from "react";
@@ -298,6 +296,7 @@ function App() {
 }
 
 ```
+
 ## Donation
 
 If this project helped you to reduce your developing time, you can give me a cup of coffee :) ♥️

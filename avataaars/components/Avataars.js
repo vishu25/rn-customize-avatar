@@ -1,38 +1,83 @@
 import * as React from 'react';
-import {Skia} from '@shopify/react-native-skia';
-import {getDefaultAvatar, getSkinTon, OPTIONS} from '../utils/utils';
-import {createOwnAvatar, getListOfOptions} from '../utils/utils';
+import { Skia } from '@shopify/react-native-skia';
+import { getDefaultAvatar, getSkinTon, OPTIONS } from '../utils/utils';
+import { createOwnAvatar, getListOfOptions } from '../utils/utils';
 import RenderAvatar from '../../common/RenderAvatar';
+import { THEME_COLOUR } from '../../constants/colors';
 
-const Avataars = props => {
-  const {skinTonColorList, facialHairColorList, accessoriesColorList, hairColorList, backgroundColorList, hatColorList, clothColorList, defaultAvatar} = props;
-  const [createdAvatar, setCreatedAvatar] = React.useState(Skia.SVG.MakeFromString(getDefaultAvatar(defaultAvatar)));
+const Avataars = (props) => {
+  const {
+    skinTonColorList,
+    facialHairColorList,
+    accessoriesColorList,
+    hairColorList,
+    backgroundColorList,
+    hatColorList,
+    clothColorList,
+    defaultAvatar,
+    backgroundColor,
+  } = props;
+  const [createdAvatar, setCreatedAvatar] = React.useState(
+    Skia.SVG.MakeFromString(
+      getDefaultAvatar({
+        ...defaultAvatar,
+        backgroundColor: backgroundColor ? [backgroundColor] : [THEME_COLOUR],
+      })
+    )
+  );
   const [selectedOption, setSelectedOption] = React.useState();
   const [selectedState, setSelectedState] = React.useState({
     flip: true,
     radius: 5,
-    clothing: [defaultAvatar?.clothing ? [...defaultAvatar?.clothing] : 'blazerAndShirt'],
+    clothing: [
+      defaultAvatar?.clothing ? [...defaultAvatar?.clothing] : 'blazerAndShirt',
+    ],
     mouth: [defaultAvatar?.eyes ? [...defaultAvatar?.mouth] : 'smile'],
     eyes: [defaultAvatar?.eyes ? [...defaultAvatar?.eyes] : 'eyeRoll'],
-    eyebrows: [defaultAvatar?.eyebrows ? [...defaultAvatar?.eyebrows] : 'defaultNatural'],
+    eyebrows: [
+      defaultAvatar?.eyebrows ? [...defaultAvatar?.eyebrows] : 'defaultNatural',
+    ],
     top: [defaultAvatar?.top ? [...defaultAvatar?.top] : 'shortCurly'],
     facialHair: [defaultAvatar?.facialHair && [...defaultAvatar?.facialHair]],
-    accessories: [defaultAvatar?.accessories && [...defaultAvatar?.accessories]],
-    clothingGraphic: [defaultAvatar?.clothingGraphic && [...defaultAvatar?.clothingGraphic]],
-    accessoriesColor: [defaultAvatar?.accessoriesColor && [...defaultAvatar?.accessoriesColor]],
-    clothesColor: [defaultAvatar?.eyes ? [...defaultAvatar?.clothesColor] : 'ff488e'],
-    hatColor: [defaultAvatar?.hatColor ? [...defaultAvatar?.hatColor] : 'c93305'],
-    hairColor: [defaultAvatar?.hairColor ? [...defaultAvatar?.hairColor] : 'c93305'],
+    accessories: [
+      defaultAvatar?.accessories && [...defaultAvatar?.accessories],
+    ],
+    clothingGraphic: [
+      defaultAvatar?.clothingGraphic && [...defaultAvatar?.clothingGraphic],
+    ],
+    accessoriesColor: [
+      defaultAvatar?.accessoriesColor && [...defaultAvatar?.accessoriesColor],
+    ],
+    clothesColor: [
+      defaultAvatar?.eyes ? [...defaultAvatar?.clothesColor] : 'ff488e',
+    ],
+    hatColor: [
+      defaultAvatar?.hatColor ? [...defaultAvatar?.hatColor] : 'c93305',
+    ],
+    hairColor: [
+      defaultAvatar?.hairColor ? [...defaultAvatar?.hairColor] : 'c93305',
+    ],
     skinColor: [defaultAvatar?.skinColor && [...defaultAvatar?.skinColor]],
-    facialHairColor: [defaultAvatar?.facialHairColor ? [...defaultAvatar?.facialHairColor] : '000000'],
-    backgroundColor: [defaultAvatar?.backgroundColor ? [...defaultAvatar?.backgroundColor] : '65c9ff', 'ffd5dc'],
+    facialHairColor: [
+      defaultAvatar?.facialHairColor
+        ? [...defaultAvatar?.facialHairColor]
+        : '000000',
+    ],
+    backgroundColor: [
+      defaultAvatar?.backgroundColor
+        ? [...defaultAvatar?.backgroundColor]
+        : backgroundColor
+        ? backgroundColor
+        : THEME_COLOUR,
+      'ffd5dc',
+    ],
     facialHairProbability: 100,
     accessoriesProbability: 100,
   });
 
   const selectedOptionRef = React.useRef('Skin Color');
 
-  const updateState = data => setSelectedState({...selectedState, ...data});
+  const updateState = (data) => setSelectedState({ ...selectedState, ...data });
 
   React.useEffect(() => {
     setSelectedOption(getSkinTon(skinTonColorList));
@@ -42,7 +87,7 @@ const Avataars = props => {
    * When use click on option Slider
    */
   const onPressOption = React.useCallback(
-    optionSelect => {
+    (optionSelect) => {
       selectedOptionRef.current = optionSelect;
       if (optionSelect.includes('Color')) {
         if (optionSelect.includes('Skin')) {
@@ -64,10 +109,19 @@ const Avataars = props => {
       }
       setSelectedOption(OPTIONS[optionSelect](selectedState));
     },
-    [selectedState, skinTonColorList, hairColorList, backgroundColorList, facialHairColorList, accessoriesColorList, hatColorList, clothColorList],
+    [
+      selectedState,
+      skinTonColorList,
+      hairColorList,
+      backgroundColorList,
+      facialHairColorList,
+      accessoriesColorList,
+      hatColorList,
+      clothColorList,
+    ]
   );
 
-  const setStyle = selectedStyle => {
+  const setStyle = (selectedStyle) => {
     const dynamicId = selectedOptionRef.current
       .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
         return index === 0 ? word.toLowerCase() : word.toUpperCase();
@@ -75,15 +129,19 @@ const Avataars = props => {
       .replace(/\s+/g, '');
     if (typeof selectedStyle !== 'string') {
       if (selectedStyle.value) {
-        updateState({[dynamicId]: [selectedStyle.value]});
+        updateState({ [dynamicId]: [selectedStyle.value] });
         setCreatedAvatar(selectedStyle.svg);
       } else {
-        updateState({[dynamicId]: []});
-        setCreatedAvatar(createOwnAvatar({...selectedState, [dynamicId]: []}));
+        updateState({ [dynamicId]: [] });
+        setCreatedAvatar(
+          createOwnAvatar({ ...selectedState, [dynamicId]: [] })
+        );
       }
     } else {
-      updateState({[dynamicId]: [selectedStyle]});
-      setCreatedAvatar(createOwnAvatar({...selectedState, [dynamicId]: [selectedStyle]}));
+      updateState({ [dynamicId]: [selectedStyle] });
+      setCreatedAvatar(
+        createOwnAvatar({ ...selectedState, [dynamicId]: [selectedStyle] })
+      );
     }
   };
 

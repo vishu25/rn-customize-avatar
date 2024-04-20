@@ -1,29 +1,49 @@
 import * as React from 'react';
-import {View, StyleSheet, FlatList, Pressable} from 'react-native';
-import {Canvas, ImageSVG, Skia} from '@shopify/react-native-skia';
-import {ColorList} from './index';
+import { View, StyleSheet, FlatList, Pressable } from 'react-native';
+import { Canvas, ImageSVG, Skia } from '@shopify/react-native-skia';
+import { ColorList } from './index';
+import { isColorDark } from '../constants/helperfunctions';
 
-const ElementList = props => {
-  const {list, flatListProps, onPressItem, listBgColor} = props;
+const ElementList = (props) => {
+  const { list, flatListProps, onPressItem, listBgColor, bgColour } = props;
 
-  const isArrayOfString = Array.isArray(list) && list.every(item => typeof item === 'string');
+  const isArrayOfString =
+    Array.isArray(list) && list.every((item) => typeof item === 'string');
+  const isDark = React.useMemo(() => isColorDark(bgColour), [bgColour]);
+
+  const noneSvgString = React.useMemo(
+    () =>
+      `<svg fill="${
+        isDark ? '#FFFFFF' : '#000000'
+      }" width="50px" height="50px" viewBox="-200 -200 320 1" y="200" xmlns="http://www.w3.org/2000/svg"><path  d="M256 8C119.034 8 8 119.033 8 256s111.034 248 248 248 248-111.034 248-248S392.967 8 256 8zm130.108 117.892c65.448 65.448 70 165.481 20.677 235.637L150.47 105.216c70.204-49.356 170.226-44.735 235.638 20.676zM125.892 386.108c-65.448-65.448-70-165.481-20.677-235.637L361.53 406.784c-70.203 49.356-170.226 44.736-235.638-20.676z"/></svg>`,
+    [isDark]
+  );
 
   const addEmptyItem = [...list];
 
   if (!isArrayOfString) {
     addEmptyItem.unshift({
-      svg: Skia.SVG.MakeFromString(
-        '<svg width="50px" height="50px" viewBox="-200 -200 320 1" y="200" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119.034 8 8 119.033 8 256s111.034 248 248 248 248-111.034 248-248S392.967 8 256 8zm130.108 117.892c65.448 65.448 70 165.481 20.677 235.637L150.47 105.216c70.204-49.356 170.226-44.735 235.638 20.676zM125.892 386.108c-65.448-65.448-70-165.481-20.677-235.637L361.53 406.784c-70.203 49.356-170.226 44.736-235.638-20.676z"/></svg>',
-      ),
+      svg: Skia.SVG.MakeFromString(noneSvgString),
       value: '',
     });
   }
 
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     return (
-      <Pressable onPress={() => onPressItem(item)} style={styles.item}>
+      <Pressable
+        onPress={() => onPressItem(item)}
+        style={[styles.item, { backgroundColor: '#' + bgColour }]}
+      >
         <Canvas style={styles.canvasContainer}>
-          <ImageSVG strokeWidth={100} color={'red'} blendMode={'clear'} svg={item?.svg} y={-40} width={140} height={200} />
+          <ImageSVG
+            strokeWidth={100}
+            color={'red'}
+            blendMode={'clear'}
+            svg={item?.svg}
+            y={-40}
+            width={140}
+            height={200}
+          />
         </Canvas>
       </Pressable>
     );
@@ -31,14 +51,21 @@ const ElementList = props => {
 
   if (isArrayOfString) {
     return (
-      <View style={{...styles.listContainer, backgroundColor: listBgColor ?? 'grey'}}>
+      <View
+        style={{
+          ...styles.listContainer,
+          backgroundColor: listBgColor ?? 'grey',
+        }}
+      >
         <ColorList colorList={list} onPressItem={onPressItem} />
       </View>
     );
   }
 
   return (
-    <View style={[styles.listContainer, {backgroundColor: listBgColor ?? 'grey'}]}>
+    <View
+      style={[styles.listContainer, { backgroundColor: listBgColor ?? 'grey' }]}
+    >
       <FlatList
         initialNumToRender={5}
         maxToRenderPerBatch={5}
@@ -69,6 +96,6 @@ const styles = StyleSheet.create({
     width: 120,
     height: 130,
   },
-  listContainer: {flex: 1, backgroundColor: 'grey'},
-  canvasContainer: {width: 140, height: 100, flex: 1, resizeMode: 'contain'},
+  listContainer: { flex: 1, backgroundColor: 'grey' },
+  canvasContainer: { width: 140, height: 100, flex: 1, resizeMode: 'contain' },
 });

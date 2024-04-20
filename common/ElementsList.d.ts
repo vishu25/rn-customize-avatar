@@ -1,5 +1,5 @@
-import {FlatListProps} from 'react-native';
-import {SkSVG} from '@shopify/react-native-skia';
+import { FlatListProps } from 'react-native';
+import { SkSVG } from '@shopify/react-native-skia';
 
 export interface Item {
   svg: SkSVG;
@@ -11,6 +11,7 @@ export interface ElementListProps {
   flatListProps?: FlatListProps<Item>;
   listBgColor?: string;
   onPressItem: (selectedStyle: Item | string) => void;
+  bgColour?: string;
 }
 
 declare const ElementList: (props: ElementListProps) => JSX.Element;

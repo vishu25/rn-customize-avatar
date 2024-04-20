@@ -8,11 +8,11 @@ import {
   NotionistsTypes,
   getBodySvg,
   getBrowsSvg,
-  getGesturesSvg,
+  getGestureSvg,
   getGlassesSvg,
   getHairSvg,
   getLipsSvg,
-  getNoseSvg
+  getNoseSvg,
 } from './utils/utils';
 export {
   getBeardSvg,
@@ -24,10 +24,10 @@ export {
   NotionistsTypes,
   getBodySvg,
   getBrowsSvg,
-  getGesturesSvg,
+  getGestureSvg,
   getGlassesSvg,
   getHairSvg,
   getLipsSvg,
-  getNoseSvg
+  getNoseSvg,
 };
-export {default as Notionists} from './components/Notionists';
+export { default as Notionists } from './components/Notionists';

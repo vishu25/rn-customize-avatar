@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {Skia} from '@shopify/react-native-skia';
-import {getDefaultAvatar, createOwnAvatar, getListOfOptions, OPTIONS, getBaseColor} from '../utils/utils';
+import { Skia } from '@shopify/react-native-skia';
+import { getDefaultAvatar, createOwnAvatar, getListOfOptions, OPTIONS, getBaseColor } from '../utils/utils';
 import RenderAvatar from '../../common/RenderAvatar';
-const Micah = props => {
+import { THEME_COLOUR } from '../../constants/colors';
+const Micah = (props) => {
   const black = '000000';
   const {
     backgroundColorList,
@@ -16,8 +17,9 @@ const Micah = props => {
     shirtColorList,
     defaultAvatar,
     baseColorList,
+    backgroundColor,
   } = props;
-  const [createdAvatar, setCreatedAvatar] = React.useState(Skia.SVG.MakeFromString(getDefaultAvatar(defaultAvatar)));
+  const [createdAvatar, setCreatedAvatar] = React.useState(Skia.SVG.MakeFromString(getDefaultAvatar({ ...defaultAvatar, backgroundColor: backgroundColor ? [backgroundColor] : [THEME_COLOUR] })));
   const [selectedOption, setSelectedOption] = React.useState();
   const [selectedState, setSelectedState] = React.useState({
     hair: [defaultAvatar?.hair ? [...defaultAvatar?.hair] : 'fonze'],
@@ -43,16 +45,16 @@ const Micah = props => {
     glassesProbability: 100,
     facialHairProbability: 100,
     earringsProbability: 100,
-    backgroundColor: [defaultAvatar?.backgroundColor && [...defaultAvatar?.backgroundColor]],
+    backgroundColor: [defaultAvatar?.backgroundColor ? [...defaultAvatar?.backgroundColor] : backgroundColor ? backgroundColor : THEME_COLOUR],
   });
   const selectedOptionRef = React.useRef('Skin Color');
-  const updateState = data => setSelectedState({...selectedState, ...data});
+  const updateState = (data) => setSelectedState({ ...selectedState, ...data });
   React.useEffect(() => {
     setSelectedOption(getBaseColor(baseColorList));
   }, [baseColorList]);
 
   const onPressOption = React.useCallback(
-    optionSelect => {
+    (optionSelect) => {
       selectedOptionRef.current = optionSelect;
       if (optionSelect.includes('Color')) {
         if (optionSelect.includes('Earring')) {
@@ -80,22 +82,10 @@ const Micah = props => {
       }
       setSelectedOption(OPTIONS[optionSelect](selectedState));
     },
-    [
-      selectedState,
-      earringColorList,
-      hairColorList,
-      backgroundColorList,
-      eyeShadowColorList,
-      eyebrowsColorList,
-      glassesColorList,
-      mouthColorList,
-      shirtColorList,
-      eyesColorList,
-      baseColorList,
-    ],
+    [selectedState, earringColorList, hairColorList, backgroundColorList, eyeShadowColorList, eyebrowsColorList, glassesColorList, mouthColorList, shirtColorList, eyesColorList, baseColorList]
   );
 
-  const setStyle = selectedStyle => {
+  const setStyle = (selectedStyle) => {
     const dynamicId = selectedOptionRef.current
       .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
         return index === 0 ? word.toLowerCase() : word.toUpperCase();
@@ -103,28 +93,19 @@ const Micah = props => {
       .replace(/\s+/g, '');
     if (typeof selectedStyle !== 'string') {
       if (selectedStyle.value) {
-        updateState({[dynamicId]: [selectedStyle.value]});
+        updateState({ [dynamicId]: [selectedStyle.value] });
         setCreatedAvatar(selectedStyle.svg);
       } else {
-        updateState({[dynamicId]: []});
-        setCreatedAvatar(createOwnAvatar({...selectedState, [dynamicId]: []}));
+        updateState({ [dynamicId]: [] });
+        setCreatedAvatar(createOwnAvatar({ ...selectedState, [dynamicId]: [] }));
       }
     } else {
-      updateState({[dynamicId]: [selectedStyle]});
-      setCreatedAvatar(createOwnAvatar({...selectedState, [dynamicId]: [selectedStyle]}));
+      updateState({ [dynamicId]: [selectedStyle] });
+      setCreatedAvatar(createOwnAvatar({ ...selectedState, [dynamicId]: [selectedStyle] }));
     }
   };
 
-  return (
-    <RenderAvatar
-      onPressOption={onPressOption}
-      getListOfOptions={getListOfOptions()}
-      setStyle={setStyle}
-      createdAvatar={createdAvatar}
-      selectedOption={selectedOption}
-      {...props}
-    />
-  );
+  return <RenderAvatar onPressOption={onPressOption} getListOfOptions={getListOfOptions()} setStyle={setStyle} createdAvatar={createdAvatar} selectedOption={selectedOption} {...props} />;
 };
 
 export default Micah;

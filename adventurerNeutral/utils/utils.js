@@ -1,31 +1,37 @@
-import {createAvatar} from '@dicebear/core';
+import { createAvatar } from '@dicebear/core';
 import * as adventurerNeutral from '@dicebear/adventurer-neutral';
-import {Skia} from '@shopify/react-native-skia';
-import {schema} from './schema';
+import { Skia } from '@shopify/react-native-skia';
+import { schema } from './schema';
+import { THEME_COLOUR } from '../../constants/colors';
 
 const defaultAvatar = {
   flip: false,
   radius: 5,
-  backgroundColor: ['65c9ff'],
+  backgroundColor: [THEME_COLOUR],
   backgroundType: ['solid'],
   mouth: ['variant30'],
   eyes: ['variant26'],
   eyebrows: ['variant10'],
 };
 
-export const getDefaultAvatar = setDefaultAvatar => {
-  return createAvatar(adventurerNeutral, {...defaultAvatar, ...setDefaultAvatar}).toString();
+export const getDefaultAvatar = (setDefaultAvatar) => {
+  return createAvatar(adventurerNeutral, {
+    ...defaultAvatar,
+    ...setDefaultAvatar,
+  }).toString();
 };
 
 export const getListOfOptions = () => {
   return ['Mouth', 'Eyes', 'Eyebrows', 'Glasses', 'Background Color'];
 };
 
-export const createOwnAvatar = avatarStyle => {
-  return Skia.SVG.MakeFromString(createAvatar(adventurerNeutral, {...avatarStyle}).toString());
+export const createOwnAvatar = (avatarStyle) => {
+  return Skia.SVG.MakeFromString(
+    createAvatar(adventurerNeutral, { ...avatarStyle }).toString()
+  );
 };
 
-export const getSkinTon = backgroundColor => {
+export const getSkinTon = (backgroundColor) => {
   console.log('backgroundColor>>>', backgroundColor);
   return [
     'FFE0B2', //#light
@@ -45,14 +51,14 @@ export const getSkinTon = backgroundColor => {
 };
 
 export const getMouthSvg = (selectedStyle, color) => {
-  return schema.properties.mouth.default.map(key => {
+  return schema.properties.mouth.default.map((key) => {
     return {
       svg: Skia.SVG.MakeFromString(
         createAvatar(adventurerNeutral, {
           ...defaultAvatar,
           ...selectedStyle,
           mouth: [key],
-        }).toString(),
+        }).toString()
       ),
       value: key,
     };
@@ -60,14 +66,14 @@ export const getMouthSvg = (selectedStyle, color) => {
 };
 
 export const getEyesSvg = (selectedStyle, color) => {
-  return schema.properties.eyes.default.map(key => {
+  return schema.properties.eyes.default.map((key) => {
     return {
       svg: Skia.SVG.MakeFromString(
         createAvatar(adventurerNeutral, {
           ...defaultAvatar,
           ...selectedStyle,
           eyes: [key],
-        }).toString(),
+        }).toString()
       ),
       value: key,
     };
@@ -75,14 +81,14 @@ export const getEyesSvg = (selectedStyle, color) => {
 };
 
 export const getEyeBrowsSvg = (selectedStyle, color) => {
-  return schema.properties.eyebrows.default.map(key => {
+  return schema.properties.eyebrows.default.map((key) => {
     return {
       svg: Skia.SVG.MakeFromString(
         createAvatar(adventurerNeutral, {
           ...defaultAvatar,
           ...selectedStyle,
           eyebrows: [key],
-        }).toString(),
+        }).toString()
       ),
       value: key,
     };
@@ -90,7 +96,7 @@ export const getEyeBrowsSvg = (selectedStyle, color) => {
 };
 
 export const getGlassesSvg = (selectedStyle, color) => {
-  return schema.properties.glasses.default.map(key => {
+  return schema.properties.glasses.default.map((key) => {
     return {
       svg: Skia.SVG.MakeFromString(
         createAvatar(adventurerNeutral, {
@@ -98,7 +104,7 @@ export const getGlassesSvg = (selectedStyle, color) => {
           ...selectedStyle,
           glasses: [key],
           glassesProbability: 100,
-        }).toString(),
+        }).toString()
       ),
       value: key,
     };
@@ -106,9 +112,9 @@ export const getGlassesSvg = (selectedStyle, color) => {
 };
 
 export const OPTIONS = {
-  Eyes: selectedState => getEyesSvg(selectedState),
-  Mouth: selectedState => getMouthSvg(selectedState),
-  Eyebrows: selectedState => getEyeBrowsSvg(selectedState),
-  Glasses: selectedState => getGlassesSvg(selectedState),
-  'Background Color': _selectedState => getSkinTon(_selectedState),
+  Eyes: (selectedState) => getEyesSvg(selectedState),
+  Mouth: (selectedState) => getMouthSvg(selectedState),
+  Eyebrows: (selectedState) => getEyeBrowsSvg(selectedState),
+  Glasses: (selectedState) => getGlassesSvg(selectedState),
+  'Background Color': (_selectedState) => getSkinTon(_selectedState),
 };

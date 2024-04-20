@@ -1,11 +1,16 @@
 import * as React from 'react';
-import {StyleSheet, FlatList, FlatListProps, Pressable} from 'react-native';
+import { StyleSheet, FlatList, Pressable } from 'react-native';
 
-const ColorList = props => {
-  const {colorList, flatListProps, onPressItem} = props;
+const ColorList = (props) => {
+  const { colorList, flatListProps, onPressItem } = props;
 
-  const renderItem = ({item}) => {
-    return <Pressable onPress={() => onPressItem(item)} style={{...styles.item, backgroundColor: `#${item}`}} />;
+  const renderItem = ({ item }) => {
+    return (
+      <Pressable
+        onPress={() => onPressItem(item)}
+        style={{ ...styles.item, backgroundColor: `#${item}` }}
+      />
+    );
   };
 
   return (
@@ -39,6 +44,6 @@ const styles = StyleSheet.create({
     width: 120,
     height: 130,
   },
-  listContainer: {flex: 1, backgroundColor: 'grey'},
-  canvasContainer: {width: 140, height: 100, flex: 1, resizeMode: 'contain'},
+  listContainer: { flex: 1, backgroundColor: 'grey' },
+  canvasContainer: { width: 140, height: 100, flex: 1, resizeMode: 'contain' },
 });

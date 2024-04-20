@@ -2,6 +2,7 @@ import { createAvatar } from '@dicebear/core';
 import * as croodles from '@dicebear/croodles';
 import { Skia } from '@shopify/react-native-skia';
 import { schema } from './schema';
+import { THEME_COLOUR } from '../../constants/colors';
 
 const defaultAvatar = {
   face: ['variant08'],
@@ -11,7 +12,7 @@ const defaultAvatar = {
   top: ['variant29'],
   mustache: ['variant04'],
   eyes: ['variant16'],
-  backgroundColor : ['65c9ff']
+  backgroundColor: [THEME_COLOUR],
 };
 
 export const getDefaultAvatar = (setDefaultAvatar) => {
@@ -22,23 +23,11 @@ export const getDefaultAvatar = (setDefaultAvatar) => {
 };
 
 export const getListOfOptions = () => {
-  return [
-    'Beard',
-    'Eyes',
-    'Face',
-    'Mouth',
-    'Mustache',
-    'Nose',
-    'Top',
-    'Top Color',
-    'Background Color'
-  ];
+  return ['Beard', 'Eyes', 'Face', 'Mouth', 'Mustache', 'Nose', 'Top', 'Top Color', 'Background Color'];
 };
 
 export const createOwnAvatar = (avatarStyle) => {
-  return Skia.SVG.MakeFromString(
-    createAvatar(croodles, { ...avatarStyle }).toString()
-  );
+  return Skia.SVG.MakeFromString(createAvatar(croodles, { ...avatarStyle }).toString());
 };
 
 export const getMouthSvg = (selectedStyle) => {
@@ -48,7 +37,7 @@ export const getMouthSvg = (selectedStyle) => {
         createAvatar(croodles, {
           ...defaultAvatar,
           ...selectedStyle,
-         
+
           mouth: [key],
         }).toString()
       ),
@@ -88,7 +77,6 @@ export const getBeardSvg = (selectedStyle) => {
     };
   });
 };
-
 
 export const getHair = (selectedStyle) => {
   return schema.properties.top.default.map((key) => {
@@ -142,7 +130,7 @@ export const getMustachesSvg = (selectedStyle) => {
         createAvatar(croodles, {
           ...defaultAvatar,
           ...selectedStyle,
-          mustacheProbability : 100,
+          mustacheProbability: 100,
           mustache: [key],
         }).toString()
       ),
@@ -150,7 +138,6 @@ export const getMustachesSvg = (selectedStyle) => {
     };
   });
 };
-
 
 export const getTopSvg = (selectedStyle) => {
   return schema.properties.top.default.map((key) => {
@@ -167,7 +154,6 @@ export const getTopSvg = (selectedStyle) => {
   });
 };
 
-
 export const getHairColor = (selectedStyle) => {
   return schema.properties.topColor.default.map((key) => {
     return {
@@ -183,17 +169,15 @@ export const getHairColor = (selectedStyle) => {
   });
 };
 
-
 export const OPTIONS = {
   Mouth: (selectedState) => getMouthSvg(selectedState),
   Nose: (selectedState) => getNose(selectedState),
-  Face : (selectedState) => getFace(selectedState),
+  Face: (selectedState) => getFace(selectedState),
   Eyes: (selectedState) => getEyesSvg(selectedState),
   Hair: (selectedState) => getHair(selectedState),
-  topColor : (selectedState) => getHairColor(selectedState),
   Beard: (selectedState) => getBeardSvg(selectedState),
-  Mustache : (selectedState) => getMustachesSvg(selectedState),
-  Top : (selectedState) => getTopSvg(selectedState),
-  "Top Color" : (selectedState) => getHairColor(selectedState),
-  "Background Color" : (selectedState) => ['ffc700', '9747ff', 'f24e1e', '699bf7', '0fa958', '000000'].concat(selectedState ?? [])
+  Mustache: (selectedState) => getMustachesSvg(selectedState),
+  Top: (selectedState) => getTopSvg(selectedState),
+  'Top Color': (selectedState) => schema.properties.topColor.default.concat(selectedState ?? []),
+  'Background Color': (selectedState) => ['ffc700', '9747ff', 'f24e1e', '699bf7', '0fa958', '000000'].concat(selectedState ?? []),
 };

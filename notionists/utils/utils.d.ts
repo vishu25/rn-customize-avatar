@@ -1,5 +1,5 @@
-import {SkSVG} from '@shopify/react-native-skia';
-import {NotionistsTypes, Item} from './types.js';
+import { SkSVG } from '@shopify/react-native-skia';
+import { NotionistsTypes, Item } from './types.js';
 
 /**
  * Returns the default avatar as a string.
@@ -21,7 +21,6 @@ Returns a list of options as an array of strings.
 */
 declare const getListOfOptions: () => Array<string>;
 
-
 /**
 Returns the eyes SVG based on the selected style and color.
 @param {NotionistsTypes} [selectedStyle] The selected style.
@@ -38,7 +37,6 @@ Returns the beard SVG based on the selected style and color.
 */
 declare const getBeardSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
 
-
 /**
  * Returns the top SVG based on the selected style and color.
  * @param {NotionistsTypes} [selectedStyle] The selected style.
@@ -46,7 +44,6 @@ declare const getBeardSvg: (selectedStyle?: NotionistsTypes, color?: string) => 
  * @return {Array<Item>} The mouth SVG.
  */
 declare const getHairSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
-
 
 /**
  * Returns the top SVG based on the selected style and color.
@@ -64,7 +61,6 @@ declare const getBodySvg: (selectedStyle?: NotionistsTypes, color?: string) => A
  */
 declare const getBrowsSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
 
-
 /**
  * Returns the top SVG based on the selected style and color.
  * @param {NotionistsTypes} [selectedStyle] The selected style.
@@ -72,7 +68,6 @@ declare const getBrowsSvg: (selectedStyle?: NotionistsTypes, color?: string) => 
  * @return {Array<Item>} The mouth SVG.
  */
 declare const getGestureSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
-
 
 /**
  * Returns the top SVG based on the selected style and color.
@@ -82,7 +77,6 @@ declare const getGestureSvg: (selectedStyle?: NotionistsTypes, color?: string) =
  */
 declare const getGlassesSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
 
-
 /**
  * Returns the top SVG based on the selected style and color.
  * @param {NotionistsTypes} [selectedStyle] The selected style.
@@ -90,7 +84,6 @@ declare const getGlassesSvg: (selectedStyle?: NotionistsTypes, color?: string) =
  * @return {Array<Item>} The mouth SVG.
  */
 declare const getLipsSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
-
 
 /**
  * Returns the top SVG based on the selected style and color.
@@ -100,33 +93,17 @@ declare const getLipsSvg: (selectedStyle?: NotionistsTypes, color?: string) => A
  */
 declare const getNoseSvg: (selectedStyle?: NotionistsTypes, color?: string) => Array<Item>;
 
-
-
 type Options = {
   Beard: (selectedState?: NotionistsTypes) => Array<Item>;
   Body: (selectedState?: NotionistsTypes) => Array<Item>;
   Eyes: (selectedState?: NotionistsTypes) => Array<Item>;
   Gesture: (selectedState?: NotionistsTypes) => Array<Item>;
   Glasses: (selectedState?: NotionistsTypes) => Array<Item>;
-  Hair : (selectedState?: NotionistsTypes) => Array<Item>;
-  Lips : (selectedState?: NotionistsTypes) => Array<Item>;
-  Nose : (selectedState?: NotionistsTypes) => Array<Item>;
-  "Background Color" : (selectedState?: NotionistsTypes) => Array<string>;
+  Hair: (selectedState?: NotionistsTypes) => Array<Item>;
+  Lips: (selectedState?: NotionistsTypes) => Array<Item>;
+  Nose: (selectedState?: NotionistsTypes) => Array<Item>;
+  'Background Color': (selectedState?: NotionistsTypes) => Array<string>;
 };
 export const OPTIONS: Options;
 
-export {
-  getDefaultAvatar,
-  getListOfOptions,
-  createOwnAvatar,
-  getEyesSvg,
-  getBeardSvg,
-  getHairSvg,
-  getBodySvg,
-  getBrowsSvg,
-  getGestureSvg,
-  getGlassesSvg,
-  getLipsSvg,
-  getNoseSvg,
-  NotionistsTypes,
-};
+export { getDefaultAvatar, getListOfOptions, createOwnAvatar, getEyesSvg, getBeardSvg, getHairSvg, getBodySvg, getBrowsSvg, getGestureSvg, getGlassesSvg, getLipsSvg, getNoseSvg, NotionistsTypes };
